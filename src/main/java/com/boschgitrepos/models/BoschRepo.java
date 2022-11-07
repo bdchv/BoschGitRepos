@@ -2,13 +2,23 @@ package com.boschgitrepos.models;
 
 import com.boschgitrepos.models.enums.Language;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "bosch_repos")
 public class BoschRepo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "description")
     private String description;
+    @Column(name = "language")
     private Language language;
+    @Column(name = "repo_url")
     private String url;
 
 
