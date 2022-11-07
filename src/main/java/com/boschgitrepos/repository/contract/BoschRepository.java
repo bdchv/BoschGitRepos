@@ -4,7 +4,7 @@ import com.boschgitrepos.models.BoschRepo;
 
 import java.util.List;
 
-public interface Repository {
+public interface BoschRepository {
 
     List<BoschRepo> getAll();
 
