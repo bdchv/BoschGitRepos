@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface Repository {
 
-    List<BoschRepo> get();
+    List<BoschRepo> getAll();
 
 }

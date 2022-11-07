@@ -1,13 +1,15 @@
 package com.boschgitrepos.repository;
 
 import com.boschgitrepos.models.BoschRepo;
+import com.boschgitrepos.repository.contract.Repository;
 
 import java.util.List;
 
-public class RepositoryImp {
+public class RepositoryImp implements Repository {
 
-    public List<BoschRepo> get(){
-        //todo
+
+    @Override
+    public List<BoschRepo> getAll() {
         return null;
     }
 }
