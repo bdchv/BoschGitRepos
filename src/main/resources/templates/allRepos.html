@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BoschGitRepositories</title>
+</head>
+<body>
+<div th:each="repos :${boschRepos}">
+    <h5 th:text="${repos.getId()}">Repo ID </h5>
+    <h5 th:text="${repos.getName()}">Repo Name </h5>
+    <h5 th:text="${repos.getDescription()}">Repo Description </h5>
+    <h5 th:text="${repos.getLanguage()}">Repo Language </h5>
+    <h5 th:text="${repos.getUrl()}">Repo Url </h5>
+
+    <hr class="my-4"/>
+
+</div>
+</body>
+</html>
