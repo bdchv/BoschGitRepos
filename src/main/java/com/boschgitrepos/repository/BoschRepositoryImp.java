@@ -1,4 +1,5 @@
 package com.boschgitrepos.repository;
+
 import com.boschgitrepos.models.BoschRepo;
 import com.boschgitrepos.models.FilterOptions;
 import com.boschgitrepos.repository.contract.BoschRepository;
@@ -32,8 +33,8 @@ public class BoschRepositoryImp implements BoschRepository {
     }
 
 
-    public List<BoschRepo> filter (FilterOptions filterOptions){
-        try(Session session = sessionFactory.openSession()){
+    public List<BoschRepo> filter(FilterOptions filterOptions) {
+        try (Session session = sessionFactory.openSession()) {
             StringBuilder queryString = new StringBuilder("from BoschRepo where 1=1");
             if (filterOptions.getName().isPresent()) {
                 queryString.append(" and name like :name");
@@ -47,13 +48,13 @@ public class BoschRepositoryImp implements BoschRepository {
 
             Query<BoschRepo> query = session.createQuery(queryString.toString(), BoschRepo.class);
             if (filterOptions.getName().isPresent()) {
-                query.setParameter("name", filterOptions.getName().get());
+                query.setParameter("name", "%" + filterOptions.getName().get() + "%");
             }
             if (filterOptions.getDescription().isPresent()) {
-                query.setParameter("description", filterOptions.getDescription().get());
+                query.setParameter("description", "%" + filterOptions.getDescription().get() + "%");
             }
             if (filterOptions.getLanguage().isPresent()) {
-                query.setParameter("language", filterOptions.parseStringToEnum(filterOptions.getLanguage().get()));
+                query.setParameter("language", "%" + filterOptions.parseStringToEnum(filterOptions.getLanguage().get() + "%"));
             }
 
             return query.list();

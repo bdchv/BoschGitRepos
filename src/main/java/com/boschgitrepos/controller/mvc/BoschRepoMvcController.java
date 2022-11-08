@@ -11,9 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.List;
-import java.util.Optional;
 
 
 @Controller
@@ -31,11 +29,12 @@ public class BoschRepoMvcController {
     }
 
 
+
     @GetMapping
     public String showAllRepos(@ModelAttribute("filterOptions") RepoDto dto, Model model){
         FilterOptions filterOptions = repoMapper.fromFilterDto(dto);
         List<BoschRepo> repoList = boschService.filter(filterOptions);
-        model.addAttribute("filterOptions", Optional.of(filterOptions));
+        model.addAttribute("filterOptions",dto);
         model.addAttribute("boschRepos",repoList);
         return "allRepos";
     }

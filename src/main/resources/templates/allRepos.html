@@ -12,21 +12,20 @@
 
 
 <!--                    filterOptions-->
-<form action="#" th:action="@{__${#httpServletRequest.requestURI}__}" method="get" th:object="${filterOptions}">
+<form action="#" th:action="@{__${#httpServletRequest.requestURI}__}"
+      method="get" th:object="${filterOptions}"><label th:class="form-label"><strong>Filter Options</strong></label>
+
     <br/>
-    <label>
-        <input type="text" placeholder="Insert Name" th:field="*{name}"/>
-    </label>
-    <label>
-        <input type="text" placeholder="Insert Description" th:field="*{description}"/>
-    </label>
-    <label>
-        <input type="text" placeholder="Insert Language" th:field="*{language}"/>
-    </label>
+    <div th:class="row">
+        <div th:class="col-2"><input th:class="form-control" type="text" placeholder="name" th:field="*{name}"/></div>
+        <div th:class="col-2"><input th:class="form-control" type="text" placeholder="Description" th:field="*{description}"/></div>
+<!--        <div th:class="col-2"><input th:class="form-control" type="text" placeholder="Language" th:field="*{language}"/>-->
+<!--        </div>-->
 
-    <br/><br/>
 
-    <input type="submit" value="Search"/>
+        <br/><br/>
+        <div th:class="col-1"><input class="btn btn-primary" type="submit" value="Search"/></div>
+    </div>
 </form>
 
 

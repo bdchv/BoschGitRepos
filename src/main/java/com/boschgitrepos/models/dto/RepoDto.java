@@ -1,7 +1,5 @@
 package com.boschgitrepos.models.dto;
 
-import com.boschgitrepos.models.enums.Language;
-
 public class RepoDto {
 
     private String name;
@@ -15,20 +13,22 @@ public class RepoDto {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public String getLanguage() {
         return language;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setLanguage(String language) {
