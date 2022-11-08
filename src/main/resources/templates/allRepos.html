@@ -6,11 +6,28 @@
 </head>
 <body>
 <div th:each="repos :${boschRepos}">
-    <h5 th:text="${repos.getId()}">Repo ID </h5>
-    <h5 th:text="${repos.getName()}">Repo Name </h5>
-    <h5 th:text="${repos.getDescription()}">Repo Description </h5>
-    <h5 th:text="${repos.getLanguage()}">Repo Language </h5>
-    <h5 th:text="${repos.getUrl()}">Repo Url </h5>
+    ID:
+    <h4 th:text="${repos.getId()}">Repo ID </h4>
+    <br>
+    Repository Name:
+    <h2 th:text="${repos.getName()}">Repo Name </h2>
+
+
+    <div th:unless="${repos.getDescription()==null}">
+        <br>
+        Description:
+        <h4 th:text="${repos.getDescription()}">Repo Description</h4>
+    </div>
+    <div th:if="${repos.getDescription() == null}">
+        <br>
+        No description
+    </div>
+    <br>
+    Language:
+    <h3 th:text="${repos.getLanguage()}">Repo Language </h3>
+    <br>
+    URL:
+    <a href="#" th:text="${repos.getUrl()}">Repo Url </a>
 
     <hr class="my-4"/>
 

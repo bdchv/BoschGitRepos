@@ -16,6 +16,7 @@ public class BoschRepo {
     private String name;
     @Column(name = "description")
     private String description;
+    @Enumerated
     @Column(name = "language")
     private Language language;
     @Column(name = "repo_url")
