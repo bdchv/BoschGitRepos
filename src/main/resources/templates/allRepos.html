@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>BoschGitRepositories</title>
+    <!-- Fonts CSS-->
+    <link rel="stylesheet" href="../static/css/heading.css" th:href="@{css/styles.css}">
+    <link rel="stylesheet" href="../static/css/body.css" th:href="@{css/styles.css}">
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{css/styles.css}">
 </head>
 <body>
+
+
+<!--                    filterOptions-->
+<form action="#" th:action="@{__${#httpServletRequest.requestURI}__}" method="get" th:object="${filterOptions}">
+    <br/>
+    <label>
+        <input type="text" placeholder="Insert Name" th:field="*{name}"/>
+    </label>
+    <label>
+        <input type="text" placeholder="Insert Description" th:field="*{description}"/>
+    </label>
+    <label>
+        <input type="text" placeholder="Insert Language" th:field="*{language}"/>
+    </label>
+
+    <br/><br/>
+
+    <input type="submit" value="Search"/>
+</form>
+
+
 <div th:each="repos :${boschRepos}">
     ID:
     <h4 th:text="${repos.getId()}">Repo ID </h4>
@@ -27,7 +52,7 @@
     <h3 th:text="${repos.getLanguage()}">Repo Language </h3>
     <br>
     URL:
-    <a href="#" th:text="${repos.getUrl()}">Repo Url </a>
+    <a href="#" th:href="${repos.getUrl()}" th:text="${repos.getUrl()}">Repo Url </a>
 
     <hr class="my-4"/>
 

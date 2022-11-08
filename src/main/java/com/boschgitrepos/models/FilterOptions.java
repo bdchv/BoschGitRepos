@@ -19,7 +19,6 @@ public class FilterOptions {
         this.language = language;
     }
 
-
     public Optional<String> getName() {
         return name;
     }
