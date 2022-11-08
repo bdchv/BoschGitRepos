@@ -2,10 +2,10 @@ package com.boschgitrepos.models.enums;
 
 public enum Language {
 
-    Java,
-    Python,
-    Go,
+    JAVA,
+    PYTHON,
+    GO,
     HTML,
-    Kotlin,
+    KOTLIN,
 
 }

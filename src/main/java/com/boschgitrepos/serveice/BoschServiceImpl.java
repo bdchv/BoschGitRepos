@@ -1,6 +1,7 @@
 package com.boschgitrepos.serveice;
 
 import com.boschgitrepos.models.BoschRepo;
+import com.boschgitrepos.models.FilterOptions;
 import com.boschgitrepos.repository.contract.BoschRepository;
 import com.boschgitrepos.serveice.contract.BoschService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,10 @@ public class BoschServiceImpl implements BoschService {
     @Override
     public List<BoschRepo> getAll() {
         return boschRepository.getAll();
+    }
+
+    @Override
+    public List<BoschRepo> filter(FilterOptions filterOptions) {
+        return boschRepository.filter(filterOptions);
     }
 }
