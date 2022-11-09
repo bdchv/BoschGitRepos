@@ -1,8 +1,5 @@
 package com.boschgitrepos.models;
 
-import com.boschgitrepos.models.enums.Language;
-import org.thymeleaf.spring5.processor.SpringOptionInSelectFieldTagProcessor;
-
 import java.util.Optional;
 
 public class FilterOptions {
@@ -32,12 +29,5 @@ public class FilterOptions {
         return language;
     }
 
-    public Language parseStringToEnum(String str){
-        try {
-            return Language.valueOf(str.toUpperCase());
-        } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException(String.format("No such element", str));
-        }
-    }
 
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../static/css/body.css" th:href="@{css/styles.css}">
     <link rel="stylesheet" href="../static/css/styles.css" th:href="@{css/styles.css}">
 </head>
-<body>
+<body style="padding-left: 30px; padding-top: 10px">
 
 
 <!--                    filterOptions-->
@@ -19,14 +19,17 @@
     <div th:class="row">
         <div th:class="col-2"><input th:class="form-control" type="text" placeholder="name" th:field="*{name}"/></div>
         <div th:class="col-2"><input th:class="form-control" type="text" placeholder="Description" th:field="*{description}"/></div>
-<!--        <div th:class="col-2"><input th:class="form-control" type="text" placeholder="Language" th:field="*{language}"/>-->
-<!--        </div>-->
+        <div th:class="col-2"><input th:class="form-control" type="text" placeholder="Language" th:field="*{language}"/>
+        </div>
 
 
         <br/><br/>
         <div th:class="col-1"><input class="btn btn-primary" type="submit" value="Search"/></div>
     </div>
 </form>
+
+<hr class="my-4"/>
+<hr class="my-4"/>
 
 
 <div th:each="repos :${boschRepos}">

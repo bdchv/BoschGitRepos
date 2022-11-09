@@ -54,7 +54,7 @@ public class BoschRepositoryImp implements BoschRepository {
                 query.setParameter("description", "%" + filterOptions.getDescription().get() + "%");
             }
             if (filterOptions.getLanguage().isPresent()) {
-                query.setParameter("language", "%" + filterOptions.parseStringToEnum(filterOptions.getLanguage().get() + "%"));
+                query.setParameter("language", "%" + filterOptions.getLanguage().get() + "%");
             }
 
             return query.list();

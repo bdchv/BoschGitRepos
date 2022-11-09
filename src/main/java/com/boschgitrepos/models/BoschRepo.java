@@ -1,7 +1,5 @@
 package com.boschgitrepos.models;
 
-import com.boschgitrepos.models.enums.Language;
-
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -16,9 +14,8 @@ public class BoschRepo {
     private String name;
     @Column(name = "description")
     private String description;
-    @Enumerated
     @Column(name = "language")
-    private Language language;
+    private String language;
     @Column(name = "repo_url")
     private String url;
 
@@ -50,11 +47,11 @@ public class BoschRepo {
         this.description = description;
     }
 
-    public Language getLanguage() {
+    public String getLanguage() {
         return language;
     }
 
-    public void setLanguage(Language language) {
+    public void setLanguage(String language) {
         this.language = language;
     }
 
